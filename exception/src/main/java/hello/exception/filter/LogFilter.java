@@ -14,6 +14,7 @@ import java.util.UUID;
             log.info("REQUEST [{}][{}][{}]", uuid, request.getDispatcherType(), requestURI);
             chain.doFilter(request, response);
         } catch (Exception e) {
+            log.info("exception!!! {}", e.getMessage());
             throw e;
         } finally { log.info("RESPONSE [{}][{}][{}]", uuid, request.getDispatcherType(), requestURI);
         }
